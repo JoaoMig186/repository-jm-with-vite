@@ -1,0 +1,25 @@
+.main--frase{
+    font-size: 60px;
+    color: #000;
+    margin-top: 110px;
+    transition: .4s all;
+}
+
+.main--frase::after{
+    content: "|";/*💗💜*/
+    margin-left: 15px;
+    font-size: 70px;
+    color: #000;
+    transition: .4s all;
+    animation-name: piscarPali;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes piscarPali {
+    from{
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
