@@ -1,12 +1,5 @@
-.main{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .main--frase{
-    font-size: 32px;
+    font-size: 48px;
     color: #000;
     transition: .4s all;
 }

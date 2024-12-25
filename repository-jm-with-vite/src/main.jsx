@@ -6,7 +6,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Header from './components/Header/index.jsx';
+import Header from './components/Header/Header.jsx';
+import SobreMim from './routes/SobreMim/index.jsx';
+import Habilidades from './routes/Habilidades/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +17,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/sobre-mim',
-    element: <div>SOBRE MIM</div>
+    element: <SobreMim />
+  },
+  {
+    path: '/habilidades',
+    element: <Habilidades />
   }
 ])
 

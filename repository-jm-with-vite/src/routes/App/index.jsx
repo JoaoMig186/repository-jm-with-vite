@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Avatar from '../../components/Avatar/Avatar.jsx'
 
 function App() {
   const [displayText, setDisplayText] = useState('');
   const text = "   Passe o mouse sobre o avatar abaixo :)";
-
+  
   useEffect(() => {
     let index = 1;
     const intervalId = setInterval(() => {
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className='main'>
       <div className='main--frase'>{displayText}</div>
+      <Avatar/>
     </div>
   );
 }
