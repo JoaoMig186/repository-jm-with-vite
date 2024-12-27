@@ -1,2 +1,31 @@
-:root{
+/* Cores principais */
+:root {
+    --primary-color: #4241FF; /* Azul */
+    --secondary-color: #45b08e; /* Verde */
+    --tertiary-color: #cfcfff; /* Cinza claro */
+    --light-background: #ffffff; /* Branco */
+    --dark-background: #2c3e50; /* Cinza escuro */
+    --text-color-light: #fff; /* Branco */
+    --text-color-dark: #000; /* Preto */
+    --highlight-color: #9191ff; /* Azul claro */
+    --highlight-dark: #6767fd; /* Azul escuro */
+    --alert-color: #d92929; /* Vermelho */
+    --link-color: blue;
+    --link-hover-color: #040042;
+}
+
+/* Tema escuro */
+.dark-theme {
+    --primary-color: #9b59b6; /* Roxo */
+    --secondary-color: #2c3e50; /* Cinza escuro */
+    --tertiary-color: #34495e; /* Cinza médio */
+    --light-background: #34495e; /* Cinza escuro */
+    --dark-background: #2c3e50; /* Cinza muito escuro */
+    --text-color-light: #ecf0f1; /* Cinza claro */
+    --text-color-dark: #2c3e50; /* Cinza escuro */
+    --highlight-color: #9b59b6; /* Roxo */
+    --highlight-dark: #8e44ad; /* Roxo mais escuro */
+    --alert-color: #e74c3c; /* Vermelho mais forte */
+    --link-color: #ecf0f1;
+    --link-hover-color: #bdc3c7;
 }
