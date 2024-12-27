@@ -1,7 +1,11 @@
 import React from "react";
 import './SkillsBoard.css'
 
-const SkillsBoard = ({}) => {
+const SkillsBoard = ({learnWanted, littleKnowledge, regularKnowledge, goodKnowledge}) => {
+
+    function joinWords(array){
+        return array.join(" - ");
+    }
     return(
             <div className="skill-board">
                 <div class="skill-board--header">
@@ -11,19 +15,19 @@ const SkillsBoard = ({}) => {
                 <div className="skill-board--list">
                     <div className="skill-board--list__item" id="learn-wanted">
                         <h3>🧠 Quero Aprender: </h3>
-                        <p>SQL - Java - PHP - Flutter - CSS-Grid - Vue</p>
+                        <p>{joinWords(learnWanted)}</p>
                     </div>
                     <div className="skill-board--list__item" id="little-knowledge">
                         <h3>⭐ Tenho pouco domínio: </h3>
-                        <p> Pandas - React-Native - C# - .NET-MVC - Entity/Identity-Framework</p>
+                        <p>{joinWords(littleKnowledge)}</p>
                     </div>
                     <div className="skill-board--list__item" id="regular-knowledge">
                         <h3>⭐⭐ Tenho domínio razoável: </h3>
-                        <p>Javascript - Bootstrap - Jquery - Python - React</p>
+                        <p>{joinWords(regularKnowledge)}</p>
                     </div>
                     <div className="skill-board--list__item" id="good-knowledge">
                         <h3>⭐⭐⭐ Tenho um bom domínio: </h3>
-                        <p>Html5 - CSS - Responsividade - Flexbox</p>
+                        <p>{joinWords(goodKnowledge)}</p>
                     </div>
                 </div>
             </div>

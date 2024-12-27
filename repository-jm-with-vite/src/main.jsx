@@ -9,6 +9,7 @@ import {
 import Header from './components/Header/Header.jsx';
 import SobreMim from './routes/SobreMim/index.jsx';
 import Habilidades from './routes/Habilidades/index.jsx';
+import Projetos from './routes/Projetos/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: '/habilidades',
     element: <Habilidades />
+  },
+  {
+    path: '/projetos',
+    element: <Projetos/>
   }
 ])
 
