@@ -6,47 +6,21 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Header from './components/Header/Header.jsx';
 import SobreMim from './routes/SobreMim/index.jsx';
 import Habilidades from './routes/Habilidades/index.jsx';
 import Projetos from './routes/Projetos/index.jsx';
+import TextTypingAvatar from './components/TextTypingAvatar/TextTypingAvatar.jsx';
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: (
-      <>
-        <Header />
-        <App />
-      </>
-    ),
-  },
-  {
-    path: '/sobre-mim',
-    element: (
-      <>
-        <Header />
-        <SobreMim />
-      </>
-    ),
-  },
-  {
-    path: '/habilidades',
-    element: (
-      <>
-        <Header />
-        <Habilidades />
-      </>
-    ),
-  },
-  {
-    path: '/projetos',
-    element: (
-      <>
-        <Header />
-        <Projetos />
-      </>
-    ),
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "/", element: <TextTypingAvatar/>},
+      { path: "sobre-mim", element: <SobreMim /> },
+      { path: "habilidades", element: <Habilidades /> },
+      { path: "projetos", element: <Projetos /> },
+    ],
   },
 ]);
 

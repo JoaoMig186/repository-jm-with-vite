@@ -1,4 +1,7 @@
+@import '../../_common-css/animations.css';
+
 .main--frase{
+    margin-top: 50px;
     font-size: 48px;
     color: #000;
     transition: .4s all;
@@ -12,12 +15,4 @@
     animation-name: piscarPali;
     animation-duration: 0.8s;
     animation-iteration-count: infinite;
-}
-
-@keyframes piscarPali {
-    from{
-        opacity: 1;
-    } to {
-        opacity: 0;
-    }
 }
