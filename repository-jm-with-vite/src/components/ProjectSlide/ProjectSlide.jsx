@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import './ProjectSlide.css'
+import { FaGithub } from "react-icons/fa";
 
 const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techsIcons}) => {
     const projetoRef = useRef();
@@ -22,16 +23,21 @@ const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techs
                 <a href={linkView} target="_blank">
                     <h3>{tittle}</h3>
                     <p>{text}</p><br/>
-                    <div style={{display: "flex"}}>
-                        <span>Conhecimentos utilizados: </span>
-                        <div style={{display: "flex", marginLeft:"8px", alignItems: "center"}}>
-                            {
-                                techsIcons.map((item) => item)
-                            }
+                    <div style={{display: "flex", justifyContent: "space-between", width: "100%"}}>
+                        <div style={{display: "flex"}}>
+                            <span>Conhecimentos utilizados: </span>
+                            <div style={{display: "flex", marginLeft:"8px", alignItems: "center"}}>
+                                {
+                                    techsIcons.map((item) => item)
+                                }
+                            </div>
                         </div>
-                        {/*<span style="font-weight: 700; color: white; background-color: gray; padding: 3px;">JSON</span>*/}
+                        {linkRepo && 
+                        <div>
+                            <a className="linkRepo" target="_blank" href={linkRepo}>Clique aqui para a accessar o repositório.<FaGithub /></a>
+                        </div>}
                     </div>
-                    </a>
+                </a>
             </div>
         </div>
     )

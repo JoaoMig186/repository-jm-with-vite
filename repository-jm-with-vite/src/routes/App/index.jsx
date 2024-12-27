@@ -24,7 +24,7 @@ function App() {
   }, [text]);
 
   return (
-    <div className='main'>
+    <div className='default-pages'>
       <div className='main--frase'>{displayText}</div>
       <Avatar/>
     </div>

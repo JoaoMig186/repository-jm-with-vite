@@ -14,25 +14,44 @@ import Projetos from './routes/Projetos/index.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App/>
+    element: (
+      <>
+        <Header />
+        <App />
+      </>
+    ),
   },
   {
     path: '/sobre-mim',
-    element: <SobreMim />
+    element: (
+      <>
+        <Header />
+        <SobreMim />
+      </>
+    ),
   },
   {
     path: '/habilidades',
-    element: <Habilidades />
+    element: (
+      <>
+        <Header />
+        <Habilidades />
+      </>
+    ),
   },
   {
     path: '/projetos',
-    element: <Projetos/>
-  }
-])
+    element: (
+      <>
+        <Header />
+        <Projetos />
+      </>
+    ),
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Header />
     <RouterProvider router={router}/>
   </React.StrictMode>,
 )

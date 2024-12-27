@@ -1,3 +1,5 @@
+@import '../../_common-css/animations.css';
+
 .pages-container{
     display: flex;
     flex-direction: column;
@@ -31,15 +33,4 @@
 .pages-container .pages .pages--paragraphs #last-one{
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-}
-
-@keyframes fadeInStretch {
-    0% {
-      opacity: 0;
-      width: 20%;
-    }
-    100% {
-      opacity: 1;
-      width: 100%;
-    }
 }

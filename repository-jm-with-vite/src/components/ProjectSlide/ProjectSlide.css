@@ -1,3 +1,5 @@
+@import "../../_common-css/animations.css";
+
 .project-slide{
     display: flex;
     width: 100%;
@@ -5,6 +7,7 @@
     align-items: center;
     margin: 50px 0;
     position: relative;
+    animation: fadeInUp 2s ease-out;
 }
 
 .project-slide .project-slide--image-div{
@@ -104,10 +107,11 @@
     color: #000;
 }
 
-@keyframes textHide {
-    0% {
-        display: flex;
-    } 100% {
-        display: none;
-    }
+.linkRepo{
+    z-index: 100;
+    color: blue !important;
+}
+
+.linkRepo:hover{
+    color: #040042 !important;
 }
