@@ -8,7 +8,7 @@ const Habilidades = () => {
     const goodKnowledge = ['React', 'Bootstrap', 'Jquery', 'Scss/Sass', 'Rest-API'];
     
     return(
-        <section className="default-pages">
+        <section className="section-page">
             <SkillsBoard learnWanted={learnWanted} littleKnowledge={littleKnowledge} regularKnowledge={regularKnowledge} goodKnowledge={goodKnowledge}/>
         </section>
     )

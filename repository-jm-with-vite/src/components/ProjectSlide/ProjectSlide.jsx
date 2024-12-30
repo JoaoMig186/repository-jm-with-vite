@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import './ProjectSlide.css'
 import { FaGithub } from "react-icons/fa";
+import { ThemeContext } from '../../context/ThemeContext.jsx';
 
 const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techsIcons}) => {
+    const {theme, toggleTheme} = useContext(ThemeContext);
     const projetoRef = useRef();
 
     function hideShow(){
@@ -12,14 +14,14 @@ const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techs
 
     return(
         <div className="project-slide" ref={projetoRef} onClick={()=> hideShow()}>
-            <div className={`project-slide--image-div ${direction}`}>
+            <div className={`project-slide--image-div ${direction} ${theme}`}>
                 <img src={image} alt="imagem do projeto" />
             </div>
             <div className={`project-slide--cover-div ${direction}`}>
                 <span>{tittle}</span>
                 <span style={{fontSize: "19px"}}>(clique para revelar)</span>
             </div>
-            <div className={`project-slide--texts ${direction}`}>
+            <div className={`project-slide--texts ${direction} ${theme}`}>
                 <a href={linkView} target="_blank">
                     <h3>{tittle}</h3>
                     <p>{text}</p><br/>
@@ -34,7 +36,7 @@ const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techs
                         </div>
                         {linkRepo && 
                         <div>
-                            <a className="linkRepo" target="_blank" href={linkRepo}>Clique aqui para a accessar o repositório.<FaGithub /></a>
+                            <a className={`linkRepo ${theme}`} target="_blank" href={linkRepo}>Clique aqui para a accessar o repositório.<FaGithub /></a>
                         </div>}
                     </div>
                 </a>

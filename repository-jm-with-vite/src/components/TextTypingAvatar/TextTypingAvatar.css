@@ -1,18 +1,26 @@
 @import '../../_common-css/animations.css';
 
 .main--frase{
-    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 48px;
-    color: #000;
     transition: .4s all;
 }
 
 .main--frase::after{
     content: "|";/*💗💜*/
     margin-left: 15px;
-    color: #000;
     transition: .4s all;
     animation-name: piscarPali;
     animation-duration: 0.8s;
     animation-iteration-count: infinite;
+}
+
+.main--frase.dark{
+    color: var(--text-color-light);
+}
+
+.main--frase.light{
+    color: var(--text-color-dark);
 }

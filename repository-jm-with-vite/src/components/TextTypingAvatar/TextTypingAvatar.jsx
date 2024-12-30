@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './TextTypingAvatar.css';
 import Avatar from '../Avatar/Avatar.jsx'
-import { ThemeContext } from '../../context/ThemeContext.jsx';
+import { ThemeContext } from '../../context/ThemeContext.jsx'
 
 function TextTypingAvatar() {
   const [displayText, setDisplayText] = useState('');
-  const {theme, toggleTheme} = useContext(ThemeContext);
+  const {theme, toggleTheme} = useContext(ThemeContext); 
 
   const text = "   Passe o mouse sobre o avatar abaixo :)";
   
@@ -28,8 +28,7 @@ function TextTypingAvatar() {
 
   return (
     <>
-    <p>O Thema atual é: {theme}</p>
-      <div className='main--frase'>{displayText}</div>
+      <div className={`main--frase ${theme}`}>{displayText}</div>
       <Avatar/>
     </>
     

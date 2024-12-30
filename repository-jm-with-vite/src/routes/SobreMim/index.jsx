@@ -18,7 +18,7 @@ const pages = [
   ];
 
  return(
-    <section className="default-pages" id="sobre-mim">
+    <section className="section-page">
           <div className="pages-container">{pages[currentPage]}</div>
           <PagesControl currentPage={currentPage} totalPages={pages.length} setCurrentPage={setCurrentPage} />
     </section>

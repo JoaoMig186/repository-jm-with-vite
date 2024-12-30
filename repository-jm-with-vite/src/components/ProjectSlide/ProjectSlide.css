@@ -17,10 +17,19 @@
     position: absolute;
     z-index: 1;
     transition: .5s all ease-in;
-    cursor: pointer;
-    -webkit-box-shadow: 6px 0px 30px -1px rgb(141, 141, 141);
-    -moz-box-shadow: 6px 0px 30px -1px rgb(141, 141, 141);
-    box-shadow: 6px 0px 30px -1px rgb(141, 141, 141);
+    cursor: pointer;    
+}
+
+.project-slide .project-slide--image-div.light{
+    -webkit-box-shadow: 6px 0px 30px -1px #8d8d8d;
+    -moz-box-shadow: 6px 0px 30px -1px #8d8d8d;
+    box-shadow: 6px 0px 30px -1px #8d8d8d;
+}
+
+.project-slide .project-slide--image-div.dark{
+    -webkit-box-shadow: 6px 0px 30px -1px rgba(141, 141, 141,0.3);
+    -moz-box-shadow: 6px 0px 30px -1px rgba(141,141,141,0.3);
+    box-shadow: 6px 0px 30px -1px rgba(141,141,141,0.3);
 }
 
 .project-slide .project-slide--image-div.right{
@@ -47,7 +56,7 @@
     z-index: 0;
     height: 300px;
     width: calc(100% - 300px);
-    background-color: #e2e2ff;
+    background-color: var(--tertiary-color);
     font-size: 35px;
     justify-content: center;
     align-items: center;
@@ -79,7 +88,7 @@
 }
 
 .project-slide .project-slide--cover-div:hover{
-    background-color: #bcbcfd;
+    background-color: var(--tertiary-color-hover);
 }
 
 .project-slide .project-slide--texts{
@@ -104,12 +113,30 @@
 
 .project-slide .project-slide--texts a{
     text-decoration: none;
-    color: #000;
+    color: var(--text-color-dark);
+}
+
+.project-slide .project-slide--texts.dark p{
+    color: var(--text-color-light);
+}
+
+.project-slide .project-slide--texts.dark h3{
+    color: var(--text-color-light);
+}
+
+.project-slide .project-slide--texts.dark span{
+    color: var(--text-color-light);
 }
 
 .linkRepo{
     z-index: 100;
     color: blue !important;
+    transition: .5s all;
+}
+
+.linkRepo.dark{
+    z-index: 100;
+    color: #9e9eff !important;
 }
 
 .linkRepo:hover{

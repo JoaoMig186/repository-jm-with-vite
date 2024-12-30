@@ -5,8 +5,8 @@
 }
 
 .skill-board .skill-board--header h2{
-    color:#fff;
-    background-color: #4241FF;
+    color:var(--text-color-light);
+    background-color: var(--primary-color);
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 25px;
@@ -18,7 +18,7 @@
 
 .skill-board .skill-board--header p{
     padding: 25px;
-    background-color: #cfcfff;
+    background-color: var(--tertiary-color);
     font-size: 21px;
 }
 
@@ -46,34 +46,34 @@
 }
 .skill-board .skill-board--list .skill-board--list__item h3{
     font-size: 22px;
-    color: #fff;
+    color: var(--text-color-light);
 }
 
 .skill-board .skill-board--list .skill-board--list__item p{
     word-spacing: 22px;
     font-size: 18px;
     font-weight: 500;
-    color: #fff;
+    color: var(--text-color-light);
 }
 
 .skill-board .skill-board--list .skill-board--list__item#learn-wanted{
-    background-color: #e2e2ff;
+    background-color: var(--highestlight-color);
 }
 
 .skill-board .skill-board--list .skill-board--list__item#learn-wanted p, .skill-board .skill-board--list .skill-board--list__item#learn-wanted h3{
-    color: #000;
+    color: var(--text-color-dark);
 }
 
 .skill-board .skill-board--list .skill-board--list__item#little-knowledge{
-    background-color: #9191ff;
+    background-color: var(--highlight-color);
 }
 
 .skill-board .skill-board--list .skill-board--list__item#regular-knowledge{
-    background-color: #6767fd;
+    background-color: var(--highlight-dark);
 }
 
 .skill-board .skill-board--list .skill-board--list__item#good-knowledge{
-    background-color: #4241FF;
+    background-color: var(--primary-color);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }

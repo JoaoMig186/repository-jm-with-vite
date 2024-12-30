@@ -9,8 +9,8 @@
 }
 
 .pages-container .pages h2{
-    color:#fff;
-    background-color: #4241FF;
+    color:var(--text-color-light);
+    background-color: var(--primary-color);
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 25px;
@@ -22,7 +22,7 @@
 
 .pages-container .pages p{
     padding: 25px;
-    background-color: #cfcfff;
+    background-color: var(--tertiary-color);
     font-size: 21px;
 }
 

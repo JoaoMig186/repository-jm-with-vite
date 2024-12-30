@@ -59,7 +59,7 @@ const Projetos = () => {
         ]
 
     return(
-        <section className="default-pages">
+        <section className="section-page">
             <h2>Número de projetos: {quantProjects}</h2>
             <div ref={containerProjects}>
                 <ProjectSlide direction={"left"} image={ImgContextoBrasil} tittle={"Contexto Brasil"} linkView={"https://www.contextobrasil.com"} text={textContextoBrasil} techsIcons={arrayIconsHTMLcssJS} />
