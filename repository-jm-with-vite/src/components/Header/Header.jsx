@@ -11,7 +11,15 @@ const Header = () => {
             <h1 className="main-header--title">
                 <Link to="/">Bem-vindo(a) ao meu portfólio!</Link>
             </h1>
-            <button className={`main-header--theme-button ${theme}`} onClick={toggleTheme}>{theme}</button>
+            <input 
+                className={`main-header--theme-checkbox ${theme}`} 
+                type="checkbox" 
+                name="checkboxTheme" 
+                onChange={(e) => {
+                    e.stopPropagation();
+                    toggleTheme();
+                }} 
+            />
             <ul className="main-header--menu">
                 <li className="main-header--menu__item">
                     <Link to="/sobre-mim">Sobre mim</Link>

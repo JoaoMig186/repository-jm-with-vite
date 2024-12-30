@@ -1,23 +1,22 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import './ProjectSlide.css'
 import { FaGithub } from "react-icons/fa";
 import { ThemeContext } from '../../context/ThemeContext.jsx';
 
 const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techsIcons}) => {
     const {theme, toggleTheme} = useContext(ThemeContext);
-    const projetoRef = useRef();
+    const [isOpen, setIsOpen] = useState(true);
 
-    function hideShow(){
-        projetoRef.current.children[0].classList.toggle(`closed-img-div-${direction}`)
-        projetoRef.current.children[1].classList.toggle(`closed-cover-div-${direction}`)
+    function hideShow() {
+        setIsOpen((prev) => !prev);
     }
 
     return(
-        <div className="project-slide" ref={projetoRef} onClick={()=> hideShow()}>
-            <div className={`project-slide--image-div ${direction} ${theme}`}>
+        <div className="project-slide" onClick={()=> hideShow()}>
+            <div className={`project-slide--image-div ${direction} ${theme} ${isOpen ? '' : `closed-img-div-${direction}`}`}>
                 <img src={image} alt="imagem do projeto" />
             </div>
-            <div className={`project-slide--cover-div ${direction}`}>
+            <div className={`project-slide--cover-div ${direction} ${isOpen ? '' : `closed-cover-div-${direction}`}`}>
                 <span>{tittle}</span>
                 <span style={{fontSize: "19px"}}>(clique para revelar)</span>
             </div>
