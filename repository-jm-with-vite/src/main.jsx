@@ -6,10 +6,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { ThemeProvider } from './context/ThemeContext.jsx';
+
 import SobreMim from './routes/SobreMim/index.jsx';
 import Habilidades from './routes/Habilidades/index.jsx';
 import Projetos from './routes/Projetos/index.jsx';
 import TextTypingAvatar from './components/TextTypingAvatar/TextTypingAvatar.jsx';
+import Curriculo from './routes/Curriculo/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,11 +23,10 @@ const router = createBrowserRouter([
       { path: "sobre-mim", element: <SobreMim /> },
       { path: "habilidades", element: <Habilidades /> },
       { path: "projetos", element: <Projetos /> },
+      { path: "curriculo", element: <Curriculo /> },
     ],
   },
 ]);
-
-import { ThemeProvider } from './context/ThemeContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
