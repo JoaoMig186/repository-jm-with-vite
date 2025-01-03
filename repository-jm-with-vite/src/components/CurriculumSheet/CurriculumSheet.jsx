@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import './CurriculumSheet.css'
 import AvatarImg from '../../assets/avatar.png'
 import { ThemeContext } from '../../context/ThemeContext.jsx';
@@ -7,12 +7,13 @@ import { GoDownload } from "react-icons/go";
 const CurriculumSheet = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
     const colorIconDownload = theme === "dark" ? "#6767fd" : "#b3b3fc";
+    const fileCurriculumPath = "../../assets/Curriculum-Joao-Miguel-Santos.pdf";
 
     return(
-        <div className="curriculum-sheet">
-             <div className={`download-curriculum-tag ${theme}`}>
+        <div id="curriculum-sheet" className="curriculum-sheet">
+             <a href={fileCurriculumPath} className={`download-curriculum-tag ${theme}`} download="Curriculum-Joao-Miguel-Santos" >
                 <GoDownload color={colorIconDownload} size={20}/>
-            </div>
+            </a>
             <div className={`curriculum-sheet--header ${theme}`}>
                 <div className="curriculum-sheet--header__img">
                     <img src={AvatarImg} alt="Imagem currículo"/>
