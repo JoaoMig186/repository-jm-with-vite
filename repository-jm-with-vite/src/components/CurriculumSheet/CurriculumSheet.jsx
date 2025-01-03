@@ -2,11 +2,17 @@ import React, { useContext } from "react";
 import './CurriculumSheet.css'
 import AvatarImg from '../../assets/avatar.png'
 import { ThemeContext } from '../../context/ThemeContext.jsx';
+import { GoDownload } from "react-icons/go";
 
 const CurriculumSheet = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
+    const colorIconDownload = theme === "dark" ? "#6767fd" : "#b3b3fc";
+
     return(
         <div className="curriculum-sheet">
+             <div className={`download-curriculum-tag ${theme}`}>
+                <GoDownload color={colorIconDownload} size={20}/>
+            </div>
             <div className={`curriculum-sheet--header ${theme}`}>
                 <div className="curriculum-sheet--header__img">
                     <img src={AvatarImg} alt="Imagem currículo"/>
@@ -33,18 +39,18 @@ const CurriculumSheet = () => {
                 <h3>Outras Experiências:</h3><br/>
                 <ul>
                     <li>Desenvolvedor web da Contexto Brasil (2022 - );</li>
-                    <li>Desenvolvedor web da Coopermike Marítimos (2022 - 2023);</li>
+                    <li>Desenvolvedor web da Coopermike Marítimos (2021 - 2022);</li>
                     <li>Gerente de mídias em redes sociais da APAE Petrópolis (2022).</li>
                 </ul>
             </div>
             <div className={`curriculum-sheet--texts ${theme}`}>
                 <h2>Cursos com certificados:</h2><br/>
                 <ul>
+                    <li>Curso ‘Docker do 0 à Maestria: Contêineres Desmistificados com K8s (15 horas);</li>
+                    <li>’Linux TOTAL: dos primeiros passos aos comandos avançados (10.5 horas);</li>
                     <li>Curso de inglês remoto – Instituto Federal do Sul-Rio grandense - IFSUL – (40 horas);</li>
                     <li>Curso básico de informática (ferramentas Office) - Graal, Paty do Alferes (40 horas);</li>
                     <li>Curso básico de Excel - Graal, Paty do Alferes (40 horas);</li>
-                    <li>Curso ‘Docker do 0 à Maestria: Contêineres Desmistificados com K8s (15 horas);</li>
-                    <li>’Linux TOTAL: dos primeiros passos aos comandos avançados (10.5 horas);</li>
                 </ul>
             </div>
             <div className={`curriculum-sheet--texts ${theme}`}>
