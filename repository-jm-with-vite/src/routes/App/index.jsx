@@ -1,31 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import './App.css'
-
+import React, { useContext } from 'react';
+import { Outlet } from "react-router-dom";
+import Header from '../../components/Header/Header.jsx';
+import { ThemeContext } from '../../context/ThemeContext.jsx';
 
 function App() {
-
-    const [displayText, setDisplayText] = useState('');
+  const {theme, toggleTheme} = useContext(ThemeContext);
   
-    useEffect(() => {
-      let index = 0;
-      const intervalId = setInterval(() => {
-        if (index < text.length) {
-          setDisplayText(prevText => prevText + text[index]);
-          index++;
-        } else {
-          clearInterval(intervalId);
-        }
-      }, 55);
-  
-      return () => clearInterval(intervalId);
-    }, [text]);
-
-
   return (
-    <div className='main'>
-      <div className='main-frase'>{displayText}</div>
+    <>
+    <Header currentTheme={theme}/> 
+    <div className={`default-pages ${theme}`}>
+      <Outlet />
     </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;

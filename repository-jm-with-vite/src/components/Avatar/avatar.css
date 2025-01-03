@@ -1,0 +1,60 @@
+.avatar{
+    width: 100%;
+    height: 325px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+}
+
+.avatar .avatarImg{
+    width: 276px;
+    display: flex;
+    bottom: 0;
+    left: 100px;
+    position: fixed;
+    cursor: pointer;
+    border-radius: 20%;
+}
+
+.avatar span{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    width: 276px;
+    left: 100px;
+    font-size: 25px;
+    justify-content: center;
+    background-color: var(--primary-color-with-opacity);
+    color: var(--text-color-light);
+}
+
+.avatarImg:hover + .chatBox{
+    opacity: 1;
+}
+
+.avatar .chatBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 270px;
+    margin-top: -50px;
+    margin-left: 10px;
+    width: 600px;
+    height: 150px;
+    border-radius: 40px 40px 40px 0px;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    z-index: 1;
+    padding: 10px;
+    opacity: 0;
+    transition: .4s all;
+}
+
+.avatar .chatBox p{
+    display: flex;
+    font-size: 18px;
+    width: 550px;
+    cursor: default;
+}
