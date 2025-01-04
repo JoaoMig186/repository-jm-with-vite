@@ -12,13 +12,15 @@ import ImgWindows7 from '../../assets/projects-imgs/windows7.png';
 import ImgUrna from '../../assets/projects-imgs/urna.png'
 
 import ProjectSlide from "../../components/ProjectSlide/ProjectSlide";
+import FilterBar from "../../components/FilterBar/FilterBar";
 
 const Projetos = () => {
-    const [quantProjects, setQuantProjects] = useState("Indefinido");
+    const [numberOfProjecrs, setNumberOfProjecrs] = useState("Indefinido");
 
     useEffect(()=> {
         const listaProjetos = containerProjects.current.children;
-        setQuantProjects(listaProjetos.length);
+        console.log("numero: ", listaProjetos.length)
+        setNumberOfProjecrs(listaProjetos.length);
     },[])
 
     const containerProjects = useRef();
@@ -60,7 +62,7 @@ const Projetos = () => {
 
     return(
         <section className="section-page">
-            <h2>Número de projetos: {quantProjects}</h2>
+            <FilterBar numberOfProjects={numberOfProjecrs}/>
             <div ref={containerProjects}>
                 <ProjectSlide direction={"left"} image={ImgContextoBrasil} tittle={"Contexto Brasil"} linkView={"https://www.contextobrasil.com"} text={textContextoBrasil} techsIcons={arrayIconsHTMLcssJS} />
                 <ProjectSlide direction={"right"} image={ImgUrna} tittle={"Urna Eleitoral"} linkRepo={"https://github.com/JoaoMig186/Urna/tree/main"} linkView={"https://urna-eletronica-ten.vercel.app/index.html"} text={textUrna} techsIcons={arrayIconsHTMLcssJS} />
