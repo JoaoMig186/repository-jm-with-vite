@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './header.css';
 import { ThemeContext } from '../../context/ThemeContext.jsx';
 
 const Header = () => {
     const {theme, toggleTheme} = useContext(ThemeContext);
-
+    const location = useLocation();
+    const hasTittle = location.pathname === "/" ? "tittle" : ""
     return (
-        <header className="main-header">
-            <h1 className="main-header--title">
-                <Link to="/">Bem-vindo(a) ao meu portfólio!</Link>
-            </h1>
+        <header className={`main-header ${hasTittle}`}>
+            {
+                location.pathname === "/" && 
+                <h1 className="main-header--title">
+                    <Link to="/">Bem-vindo(a) ao meu portfólio!</Link>
+                </h1>
+            }
             <input 
                 className={`main-header--theme-checkbox ${theme}`} 
                 type="checkbox" 
