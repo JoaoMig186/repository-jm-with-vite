@@ -15,6 +15,7 @@ const Header = () => {
                 className={`main-header--theme-checkbox ${theme}`} 
                 type="checkbox" 
                 name="checkboxTheme" 
+                checked={theme === "dark"}
                 onChange={(e) => {
                     e.stopPropagation();
                     toggleTheme();
