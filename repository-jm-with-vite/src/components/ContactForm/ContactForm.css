@@ -1,0 +1,265 @@
+.contact-form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.contact-form .contact-form--area{
+    width: 65%;
+    height: 680px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px;
+    transition: 0.7s all;
+}
+
+.contact-form--area.email{
+    background-color: var(--primary-color);
+}
+
+.contact-form--area.whatsapp{
+    background-color: var(--secondary-color);
+}
+
+.contact-form--area--type-checkbox{
+    position: relative;
+    margin-bottom: 16px;
+    width: 50px;
+    height: 30px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--highestlight-color);
+    outline: none;
+    border-radius: 40px;
+    transition: .5s all;
+    cursor: pointer;
+}
+
+.contact-form--area--type-checkbox:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/gmail.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.75);
+    transition: .5s all;
+}
+
+.contact-form--area--type-checkbox:checked{
+    background: #8bffb2;
+}
+
+.contact-form--area--type-checkbox:checked::before{
+    content: '';
+    background-color: #58ff90;
+    background-image: url('../../assets/wahtsapp.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: var(--text-color-light);
+    left: 30px;
+}
+
+.contact-form .contact-form--area h2{
+    color: var(--text-color-light);
+    margin-bottom: 32px;
+    animation: fadeIn 0.7s ease-in;
+}
+
+.contact-form .contact-form--social-midias{
+    position: relative;
+    padding: 32px 16px;
+    height: 680px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 48px;
+    width: 80px;
+    transition: all 0.7s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.contact-form .contact-form--social-midias::before{
+    content: '<';
+    position: absolute;
+    top: 45%;
+    left: -40px;
+    content: '';
+    width: 40px;
+    height: 100px;
+    background: rgba(66, 65, 255, 0.62);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-light);
+}
+
+.contact-form .contact-form--social-midias:hover{
+    width: 280px;
+}
+
+.contact-form .contact-form--social-midias.email{
+    background: rgba(66, 65, 255, 0.62);
+}
+
+.contact-form .contact-form--social-midias.whatsapp{
+    background: rgb(69, 176, 142, 0.62);
+}
+
+
+.contact-form .contact-form--social-midias a{
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+
+.contact-form .contact-form--social-midias .contact-form--social-midia__item{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-form .contact-form--social-midias .contact-form--social-midia__item:hover span{
+    color: var(--link-hover-color);
+}
+
+.contact-form .contact-form--social-midias .contact-form--social-midia__item span{
+    display: none;
+    color: var(--text-color-light);
+    transition: 0.4s all ease;
+}
+
+.contact-form .contact-form--social-midias:hover .contact-form--social-midia__item span{
+    display: flex;
+    width: 100%;
+}
+
+.contact-form .contact-form--area .contact-form--area__form{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    width: 480px;
+    height: 100%;
+    animation: fadeIn 0.7s ease-in;
+}
+
+.contact-form .contact-form--area .contact-form--area__form label{
+    color: var(--text-color-light);
+    font-size: 22px;
+}
+
+.contact-form .contact-form--area .contact-form--area__form .input-text{
+    border: none;
+    background-color: var(--tertiary-color-hover);
+    width: 100%;
+    height: 38px;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.contact-form .contact-form--area .contact-form--area__form .input-text-area{
+    border: none;
+    background-color: var(--tertiary-color-hover);
+    width: 100%;
+    height: 80px;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.button-submit{
+    width: 80px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+.contact-form--area__whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 480px;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeIn 0.7s ease-in;
+}
+
+.contact-form--area__whatsapp h3 {
+    margin-bottom: 16px;
+}
+
+.contact-form--area__whatsapp p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact-form--area__whatsapp a {
+    text-decoration: none;
+    text-align: center;
+    background-color: #128c7e;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form--area__whatsapp button:hover {
+    background-color: #0d6e5a;
+}
+
+.contact-form--area__whatsapp .image-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact-form--area__whatsapp .image-card .image-card--div{
+    width: 200px;
+    height: 200px;
+    border-bottom: 3px solid #0d6e5a;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-form--area__whatsapp .image-card .image-card--div img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
