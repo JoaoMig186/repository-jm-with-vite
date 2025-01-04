@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 import './ContactForm.css';
 import ImageAvatar from '../../assets/avatar.png'
 import { FaInstagramSquare, FaLinkedin, FaGithub,   } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { contactValidationSchema } from "../../ValidationsForms/contactValidation";
 
 const ContactForm = () => {
     const [typeContact, setTypeContact] = useState("email");
@@ -10,6 +14,32 @@ const ContactForm = () => {
     const handleContactChange = () =>{
         setTypeContact(typeContact === "email" ? "whatsapp" : "email");
     }
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
+        resolver: yupResolver(contactValidationSchema) 
+    });
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch("https://formspree.io/f/mkggpbyq", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+    
+            if (response.ok) {
+                alert("Formulário enviado com sucesso!");
+                reset();
+            } else {
+                alert("Houve um problema ao enviar o formulário. Tente novamente.");
+            }
+        } catch (error) {
+            console.error("Erro ao enviar o formulário:", error);
+            alert("Erro ao enviar o formulário. Verifique sua conexão e tente novamente.");
+        }
+    };
 
     return(
         <div className="contact-form">
@@ -19,19 +49,19 @@ const ContactForm = () => {
                         <FaLinkedin style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>João Miguel dos Santos</span>
                     </div> 
                 </a>
-                <a href="#">
+                <a href="https://github.com/JoaoMig186" target="_blank">
                     <div className="contact-form--social-midia__item">
                         <FaGithub style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>JoaoMig186</span>
                     </div> 
                 </a>
-                <a href="https://www.instagram.com/j.miguel_186/">
+                <a href="https://www.instagram.com/j.miguel_186/" target="_blank">
                     <div className="contact-form--social-midia__item">
                         <FaInstagramSquare style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>@j.miguel_186</span>
                     </div> 
                 </a>
-                    <div className="contact-form--social-midia__item">
-                        <MdEmail style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>joaomiguelscrs@gmail.com</span>
-                    </div> 
+                <div className="contact-form--social-midia__item">
+                    <MdEmail style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>joaomiguelscrs@gmail.com</span>
+                </div> 
             </div>
             <div className={`contact-form--area ${typeContact}`}>
                 <input 
@@ -43,20 +73,23 @@ const ContactForm = () => {
                 <h2>Entre em contato comigo através do {typeContact}:</h2>
                 {
                     typeContact == "email" ? 
-                    <form action="" className="contact-form--area__form">
+                    <form action="https://formspree.io/f/mkggpbyq" method="POST" className="contact-form--area__form" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="username">
-                            Seu nome ou de sua Empresa:
+                            Seu nome ou de sua empresa:
                         </label>
-                        <input id="username" name="username" type="text" className="input-text" placeholder="Meu Nome Exemplo"/> 
+                        <input id="username" name="username" type="text" className="input-text" placeholder="Meu Nome Exemplo" {...register("username")}/> 
+                        <span>{errors.username?.message}</span>
                         <label htmlFor="email">
-                            Seu email ou de sua Empresa:
+                            Seu email ou de sua empresa:
                         </label>
-                        <input id="email" name="email" type="text" className="input-text" placeholder="exemplo@email.com"/> 
+                        <input id="email" name="email" type="text" className="input-text" placeholder="exemplo@email.com" {...register("email")}/> 
+                        <span>{errors.email?.message}</span>
                         <label htmlFor="message">
                             Sua mensagem:
                         </label>
-                        <textarea id="message" name="message" type="text" className="input-text-area" placeholder="Escreva sua mensagem para entrar em contato comigo..."/> 
-                        <button id="submit" className="button-submit" onClick={() => {alert("Enviado!")}}>Enviar</button>
+                        <textarea id="message" name="message" type="text" className="input-text-area" placeholder="Escreva sua mensagem para entrar em contato comigo..." {...register("message")}/> 
+                        <span>{errors.message?.message}</span>
+                        <button id="submitButton" type="submit" className="button-submit" >Enviar</button>
                     </form>
                     :
                     <div className="contact-form--area__whatsapp">
@@ -67,7 +100,7 @@ const ContactForm = () => {
                             </div>
                             <p>+55 (24)98115-1365</p>
                         </div>
-                        <button>Iniciar conversa</button>
+                        <a href="https://wa.me/5524981151365" target="_blank">Iniciar conversa</a>
                     </div>
                 }
                 

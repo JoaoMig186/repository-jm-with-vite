@@ -226,7 +226,9 @@
     font-weight: bold;
 }
 
-.contact-form--area__whatsapp button {
+.contact-form--area__whatsapp a {
+    text-decoration: none;
+    text-align: center;
     background-color: #128c7e;
     color: #fff;
     border: none;
