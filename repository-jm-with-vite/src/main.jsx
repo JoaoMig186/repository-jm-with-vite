@@ -13,6 +13,7 @@ import Habilidades from './routes/Habilidades/index.jsx';
 import Projetos from './routes/Projetos/index.jsx';
 import TextTypingAvatar from './components/TextTypingAvatar/TextTypingAvatar.jsx';
 import Curriculo from './routes/Curriculo/index.jsx';
+import Contato from './routes/Contato/index.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "habilidades", element: <Habilidades /> },
       { path: "projetos", element: <Projetos /> },
       { path: "curriculo", element: <Curriculo /> },
+      { path: "contato", element: <Contato /> },
     ],
   },
 ]);
