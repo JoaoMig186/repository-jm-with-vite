@@ -11,7 +11,7 @@ const CurriculumSheet = () => {
 
     return(
         <div id="curriculum-sheet" className="curriculum-sheet">
-             <a href={fileCurriculumPath} className={`download-curriculum-tag ${theme}`} download="Curriculum-Joao-Miguel-Santos" >
+             <a href={fileCurriculumPath} className={`download-curriculum-tag ${theme}`} download="Curriculum-Joao-Miguel-Santos.pdf" >
                 <GoDownload color={colorIconDownload} size={20}/>
             </a>
             <div className={`curriculum-sheet--header ${theme}`}>
