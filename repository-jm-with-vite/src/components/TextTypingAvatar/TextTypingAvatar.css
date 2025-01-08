@@ -6,6 +6,7 @@
     justify-content: center;
     font-size: 48px;
     transition: .4s all;
+    margin-top: 20px;
 }
 
 .main--frase::after{
@@ -23,4 +24,11 @@
 
 .main--frase.light{
     color: var(--text-color-dark);
+}
+
+@media (max-width: 1080px){
+    .main--frase{
+        font-size: 30px;
+        justify-content: flex-start;
+    }
 }

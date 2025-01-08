@@ -17,9 +17,9 @@
 }
 
 .default-pages{
-  padding: 40px 120px;
+  padding: 30px 120px;
   width: 100%;
-  min-height: calc(100vh - 147px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,6 +29,7 @@
 
 .default-pages.tittle{
   min-height: calc(100vh - 266px);
+  justify-content: flex-start;
 }
 
 .default-pages .section-page{
@@ -46,4 +47,13 @@
 
 .default-pages.dark{
   background-color: var(--primary-color-dark);
+}
+
+@media (max-width: 800px){
+  .default-pages{
+    padding: 30px;
+  }
+  .default-pages.tittle{
+    height: 100vh;
+  }
 }
