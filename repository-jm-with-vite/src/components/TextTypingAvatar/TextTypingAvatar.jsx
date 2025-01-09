@@ -6,8 +6,9 @@ import { ThemeContext } from '../../context/ThemeContext.jsx'
 function TextTypingAvatar() {
   const [displayText, setDisplayText] = useState('');
   const {theme, toggleTheme} = useContext(ThemeContext); 
-
-  const text = "   Passe o mouse sobre o avatar abaixo :)";
+  var widthScreen = window.screen.width;
+  const viewPort = widthScreen < 560 ? "Clique no ": "Passe o ";
+  const text = `   ${viewPort}mouse sobre o avatar abaixo :)`;
   
   useEffect(() => {
     let index = 1;

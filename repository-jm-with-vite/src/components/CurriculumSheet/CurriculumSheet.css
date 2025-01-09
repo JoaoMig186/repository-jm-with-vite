@@ -5,7 +5,6 @@
     align-items: center;
     margin-top: 48px;
     width: 780px;
-    /*max-height: calc(100vh - 280px);*/
     animation: fadeInUp 1s ease-out;
     -webkit-box-shadow: 6px 0px 115px -22px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 6px 0px 115px -22px rgba(0, 0, 0, 0.6);
@@ -158,4 +157,60 @@
 
 .download-curriculum-tag.dark{
     background-color: var(--light-background);
+}
+
+@media (max-width: 800px) {
+    .curriculum-sheet{
+        width: 100%;
+    }
+    .curriculum-sheet .curriculum-sheet--header{
+        height: 150px;
+        justify-content: space-between;
+    }
+    .curriculum-sheet .curriculum-sheet--header .curriculum-sheet--header__img img{
+        width: 60px;
+    }
+    .curriculum-sheet .curriculum-sheet--header .curriculum-sheet--header__img{
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .curriculum-sheet .curriculum-sheet--header{
+        height: 100px;
+        width: 95%;
+    }
+    .curriculum-sheet .curriculum-sheet--header.light{
+        border: 8px solid var(--light-background);
+    }
+    .curriculum-sheet .curriculum-sheet--header.dark{
+        border: 8px solid var(--primary-color-dark);
+    }
+    .curriculum-sheet .curriculum-sheet--texts{
+        width: 95%;
+    }
+    .curriculum-sheet .curriculum-sheet--texts.light{
+        border: 8px solid var(--light-background);
+    }
+    .curriculum-sheet .curriculum-sheet--texts.dark{
+        border: 8px solid var(--primary-color-dark);
+    
+    }
+    .curriculum-sheet .curriculum-sheet--header .curriculum-sheet--header__text-box h4{
+        font-size: 16px;
+    }
+    .curriculum-sheet h2{
+        font-size: 16px;
+    }
+    .curriculum-sheet h3{
+        font-size: 14px;
+    }
+    .curriculum-sheet p{
+        font-size: 13px;
+    }
+    .curriculum-sheet li{
+        font-size: 13px;
+    }
 }

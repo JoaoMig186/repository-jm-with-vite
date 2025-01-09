@@ -10,7 +10,7 @@
     width: 276px;
     display: flex;
     bottom: 0;
-    left: 100px;
+    left: 0;
     position: fixed;
     cursor: pointer;
     border-radius: 20%;
@@ -22,7 +22,7 @@
     z-index: 1;
     bottom: 0;
     width: 276px;
-    left: 100px;
+    left: 0;
     font-size: 25px;
     justify-content: center;
     background-color: var(--primary-color-with-opacity);
@@ -38,23 +38,58 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 22px;
     left: 270px;
     margin-top: -50px;
     margin-left: 10px;
-    width: 600px;
-    height: 150px;
+    max-width: 600px;
+    max-height: 150px;
     border-radius: 40px 40px 40px 0px;
     background-color: var(--secondary-color);
     color: var(--text-color-light);
     z-index: 1;
-    padding: 10px;
     opacity: 0;
     transition: .4s all;
 }
 
 .avatar .chatBox p{
+    text-align: justify;
     display: flex;
     font-size: 18px;
-    width: 550px;
     cursor: default;
+}
+
+@media (max-width: 1080px) {
+    .avatar{
+        height: 225px;
+    }
+    .avatar .avatarImg{
+        width: 200px;
+    }
+    .avatar span{
+        width: 200px;
+        font-size: 18px;
+    }
+    
+}
+
+@media (max-width: 800px) {
+    .avatar .chatBox{
+        max-width: 100%;
+        margin-left: 128px;
+        top: -70px;
+ 
+        margin-right: 16px;
+        left: 0;
+    }
+    .avatar .chatBox p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 560px){
+    .avatar .chatBox{
+        max-height: 200px;
+        top: -100px;
+    }
 }

@@ -8,7 +8,7 @@ const Header = () => {
     const location = useLocation();
     const hasTittle = location.pathname === "/" ? "tittle" : ""
     return (
-        <header className={`main-header ${hasTittle}`}>
+        <nav className={`main-header ${hasTittle}`}>
             {
                 location.pathname === "/" && 
                 <h1 className="main-header--title">
@@ -25,6 +25,8 @@ const Header = () => {
                     toggleTheme();
                 }} 
             />
+            <input type="checkbox" id="main-header--menu__responsive-button" /> 
+            <label for="main-header--menu__responsive-button">&#9776;</label>
             <ul className="main-header--menu">
                 <li className="main-header--menu__item">
                     <Link to="/sobre-mim">Sobre mim</Link>
@@ -47,7 +49,7 @@ const Header = () => {
                     <span className="line"></span>
                 </li>
             </ul>
-        </header>
+        </nav>
     );
 };
 
