@@ -77,3 +77,22 @@
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+
+@media (max-width: 800px) {
+    .skill-board .skill-board--header h2{
+        font-size: 30px;
+    }
+    .skill-board .skill-board--header p{
+        font-size: 16px;
+    }
+    .skill-board .skill-board--list .skill-board--list__item{
+        flex-direction: column;
+        height: 100%;
+        padding: 16px;
+        text-align: center;
+    }
+    .skill-board .skill-board--list .skill-board--list__item p{
+        height: 100%;
+        margin-top: 16px;
+    }
+}
