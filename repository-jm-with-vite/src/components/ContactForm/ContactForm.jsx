@@ -10,14 +10,26 @@ import { contactValidationSchema } from "../../ValidationsForms/contactValidatio
 
 const ContactForm = () => {
     const [typeContact, setTypeContact] = useState("email");
+    const [copied, setCopied] = useState(false);
+
     var colorIcons = typeContact === "email" ? "#6767fd" : "#165c46"
     const handleContactChange = () =>{
         setTypeContact(typeContact === "email" ? "whatsapp" : "email");
     }
 
+    var widthScreen = window.screen.width;
+    const sizeIcons = widthScreen < 400 ? 25 : 40;
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
         resolver: yupResolver(contactValidationSchema) 
     });
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText("joaomiguelscrs@gmail.com").then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        });
+    };
 
     const onSubmit = async (data) => {
         try {
@@ -46,21 +58,22 @@ const ContactForm = () => {
             <div className={`contact-form--social-midias ${typeContact}`}>
                 <a href="https://www.linkedin.com/in/jo%C3%A3o-miguel-dos-santos-751a64227/" target="_blank">
                     <div className="contact-form--social-midia__item">
-                        <FaLinkedin style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>João Miguel dos Santos</span>
+                        <FaLinkedin style={{transition: "0.7s all"}} color={colorIcons} size={sizeIcons}/> <span>João Miguel dos Santos</span>
                     </div> 
                 </a>
                 <a href="https://github.com/JoaoMig186" target="_blank">
                     <div className="contact-form--social-midia__item">
-                        <FaGithub style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>JoaoMig186</span>
+                        <FaGithub style={{transition: "0.7s all"}} color={colorIcons} size={sizeIcons}/> <span>JoaoMig186</span>
                     </div> 
                 </a>
                 <a href="https://www.instagram.com/j.miguel_186/" target="_blank">
                     <div className="contact-form--social-midia__item">
-                        <FaInstagramSquare style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>@j.miguel_186</span>
+                        <FaInstagramSquare style={{transition: "0.7s all"}} color={colorIcons} size={sizeIcons}/> <span>@j.miguel_186</span>
                     </div> 
                 </a>
-                <div className="contact-form--social-midia__item">
-                    <MdEmail style={{transition: "0.7s all"}} color={colorIcons} size={40}/> <span>joaomiguelscrs@gmail.com</span>
+                <div className="contact-form--social-midia__item" onClick={handleCopy} >
+                    <MdEmail style={{transition: "0.7s all"}} color={colorIcons} size={sizeIcons}/> <span>joaomiguelscrs@gmail.com</span>
+                    {copied && <><p className="alert-copied" >Email copiado com sucesso!</p></>}
                 </div> 
             </div>
             <div className={`contact-form--area ${typeContact}`}>
@@ -103,7 +116,6 @@ const ContactForm = () => {
                         <a href="https://wa.me/5524981151365" target="_blank">Iniciar conversa</a>
                     </div>
                 }
-                
             </div>
         </div>
     )
