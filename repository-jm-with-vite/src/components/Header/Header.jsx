@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import './header.css';
 import { ThemeContext } from '../../context/ThemeContext.jsx';
@@ -6,7 +6,13 @@ import { ThemeContext } from '../../context/ThemeContext.jsx';
 const Header = () => {
     const {theme, toggleTheme} = useContext(ThemeContext);
     const location = useLocation();
-    const hasTittle = location.pathname === "/" ? "tittle" : ""
+    const hasTittle = location.pathname === "/" ? "tittle" : "";
+    const checkboxMenuMobile = useRef();
+
+    useEffect(() => {
+        checkboxMenuMobile.current.checked = false
+    },[location.pathname])
+
     return (
         <nav className={`main-header ${hasTittle}`}>
             {
@@ -25,7 +31,7 @@ const Header = () => {
                     toggleTheme();
                 }} 
             />
-            <input type="checkbox" id="main-header--menu__responsive-button" /> 
+            <input type="checkbox" id="main-header--menu__responsive-button" ref={checkboxMenuMobile} /> 
             <label for="main-header--menu__responsive-button">&#9776;</label>
             <ul className="main-header--menu">
                 <li className="main-header--menu__item">
