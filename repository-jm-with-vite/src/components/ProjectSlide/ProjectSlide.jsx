@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useState } from "react";
+import React, { useRef, useContext, useState, useEffect } from "react";
 import './ProjectSlide.css'
 import { FaGithub } from "react-icons/fa";
 import { RiArrowGoBackLine } from "react-icons/ri";
@@ -8,6 +8,7 @@ const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techs
     const {theme, toggleTheme} = useContext(ThemeContext);
     const [isOpen, setIsOpen] = useState(true);
     const [cardShow, setCardShow] = useState(true);
+    const [widthScreen, setWidthScreen] = useState(window.screen.width);
     const arrowBackColor = theme === "light" ? "#000" : "#fff";
 
     function hideShow() {
@@ -18,7 +19,15 @@ const ProjectSlide = ({direction, image, tittle, text, linkRepo, linkView, techs
         setCardShow((prev) => !prev);
     }
 
-    var widthScreen = window.screen.width;
+    useEffect(() => {
+        const handleResize = () => {
+          setWidthScreen(window.screen.width)
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+    },[]);
 
     return(
         widthScreen > 800 ? 

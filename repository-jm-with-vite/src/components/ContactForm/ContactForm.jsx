@@ -11,13 +11,23 @@ import { contactValidationSchema } from "../../ValidationsForms/contactValidatio
 const ContactForm = () => {
     const [typeContact, setTypeContact] = useState("email");
     const [copied, setCopied] = useState(false);
+    const [widthScreen, setWidthScreen] = useState(window.screen.width);
 
     var colorIcons = typeContact === "email" ? "#6767fd" : "#165c46"
     const handleContactChange = () =>{
         setTypeContact(typeContact === "email" ? "whatsapp" : "email");
     }
 
-    var widthScreen = window.screen.width;
+    useEffect(() => {
+        const handleResize = () => {
+            setWidthScreen(window.screen.width)
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    },[]);
+
     const sizeIcons = widthScreen < 400 ? 25 : 40;
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
