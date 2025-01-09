@@ -142,3 +142,111 @@
 .linkRepo:hover{
     color: #040042 !important;
 }
+
+/* Mobile */
+.project-card-mobile{
+    position: relative;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    z-index: 9;
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+    display: flex;
+    visibility: visible;
+
+}
+
+.project-card-mobile.card-hide{
+    animation: fadeIn 0.7s ease-in;
+    visibility: hidden;
+}
+
+.project-card-mobile img{
+    width: 328px;
+    border-radius: 16px;
+}
+
+.project-card-mobile--cover{
+    position: absolute;
+    z-index: 10;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    border-radius: 16px;
+    padding: 16px 0;
+    -webkit-box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.75);
+    transition: 0.7s background-color;
+    transition: 0.7s color;
+}
+
+.project-card-mobile--cover.dark{
+    color: var(--text-color-light);
+    background-color: var(--primary-color-dark);
+}
+
+.project-card-mobile--cover.light{
+    color: var(--text-color-dark);
+    background-color: var(--light-background);
+}
+
+.project-card-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.project-text-mobile{
+    position: absolute;
+    padding: 0 48px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 0;
+    visibility: hidden;
+}
+
+.project-text-mobile.card-hide{
+    visibility: visible;
+}
+
+.project-text-mobile.dark h3, .project-text-mobile.dark p{
+    color: var(--text-color-light);
+}
+
+.project-text-mobile.light h3, .project-text-mobile.light p{
+    color: var(--text-color-dark);
+}
+
+.second-component-text.dark{
+    color: var(--text-color-light);
+    margin-top: 16px;
+}
+
+.second-component-text.light{
+    color: var(--text-color-dark);
+    margin-top: 16px;
+}
+
+.project-text-mobile.dark a{
+    color: var(--text-color-light);
+    text-decoration: none;
+}
+
+.project-text-mobile.light a{
+    color: var(--text-color-dark);
+    text-decoration: none;
+}

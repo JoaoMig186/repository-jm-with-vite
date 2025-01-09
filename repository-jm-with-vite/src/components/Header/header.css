@@ -104,3 +104,70 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
+
+#main-header--menu__responsive-button{
+    display: none;
+}
+
+label[for="main-header--menu__responsive-button"]{
+    display: none;
+    padding: 5px;
+    color: var(--text-color-light);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+}
+
+@media (max-width: 1080px) {
+    .main-header .main-header--title{
+        font-size: 30px;
+    }
+    .main-header .main-header--menu .main-header--menu__item{
+        margin: 40px;
+    }
+    .main-header .main-header--menu .main-header--menu__item a{
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 800px){
+    label[for="main-header--menu__responsive-button"]{
+        display: block;
+    }
+    .main-header.tittle{
+        height: 100%;
+    }
+    .main-header .main-header--menu{
+        left: -100%;
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        top: 100%;
+        background-color: var(--highlight-dark);
+        transition: 0.7s all ease;
+        z-index: 100;
+    }
+    #main-header--menu__responsive-button:checked ~ .main-header--menu{
+        left: 0;
+    }
+    .main-header .main-header--theme-checkbox{
+        width: 40px;
+        height: 20px;
+    }
+    .main-header .main-header--theme-checkbox:before{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 560px){
+    .main-header .main-header--title{
+        font-size: 22px;
+    }
+    .main-header .main-header--menu .main-header--menu__item a{
+        font-size: 18px;
+    }
+}
