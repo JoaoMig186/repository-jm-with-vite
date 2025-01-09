@@ -5,11 +5,22 @@ import { ThemeContext } from '../../context/ThemeContext.jsx'
 
 function TextTypingAvatar() {
   const [displayText, setDisplayText] = useState('');
+  const [widthScreen, setWidthScreen] = useState(window.screen.width);
+
   const {theme, toggleTheme} = useContext(ThemeContext); 
-  var widthScreen = window.screen.width;
   const viewPort = widthScreen < 560 ? "Clique no ": "Passe o ";
   const text = `   ${viewPort}mouse sobre o avatar abaixo :)`;
   
+  useEffect(() => {
+    const handleResize = () => {
+      setWidthScreen(window.screen.width)
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+  };
+  },[]);
+
   useEffect(() => {
     let index = 1;
     const intervalId = setInterval(() => {
